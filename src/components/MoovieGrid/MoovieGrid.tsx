@@ -1,3 +1,4 @@
+import { type KeyboardEvent } from 'react';
 import type { Movie } from '../../types/movie';
 import css from './MoovieGrid.module.css';
 
@@ -16,7 +17,7 @@ export default function MovieGrid({ movies, onSelect }: MovieGridProps) {
             role="button"
             tabIndex={0}
             onClick={() => onSelect(movie)}
-            onKeyDown={event => {
+            onKeyDown={(event: KeyboardEvent<HTMLDivElement>) => {
               if (event.key === 'Enter' || event.key === ' ') {
                 onSelect(movie);
               }

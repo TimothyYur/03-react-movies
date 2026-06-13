@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { type ChangeEvent, useState } from 'react';
 import toast from 'react-hot-toast';
 import styles from './SearchBar.module.css';
 
@@ -41,7 +41,9 @@ export default function SearchBar({ onSubmit }: SearchBarProps) {
             autoComplete="off"
             placeholder="Search movies..."
             value={query}
-            onChange={event => setQuery(event.target.value)}
+            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+              setQuery(event.target.value)
+            }
             autoFocus
           />
           <button className={styles.button} type="submit">

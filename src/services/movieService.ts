@@ -1,8 +1,7 @@
 import axios, { type AxiosRequestConfig } from 'axios';
 import type { Movie } from '../types/movie';
 
-const VITE_TMDB_TOKEN =
-  'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNzA1ZGRmYjlkODVlMTJlMTJmZTRjODlmZmIwZjFiYiIsIm5iZiI6MTc4MTI0NDcwMC44MTksInN1YiI6IjZhMmJhMzFjMjllZWRlMDg3YWMyM2FlMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.2eKGelx9gwb3pJJkSnUyamL-5_jtuzdze-FXToP1IWE';
+const my_key = import.meta.env.VITE_TMDB_TOKEN;
 
 interface TmdbSearchResponse {
   results: Movie[];
@@ -17,7 +16,7 @@ export async function fetchMovies(query: string): Promise<Movie[]> {
       page: 1,
     },
     headers: {
-      Authorization: `Bearer ${VITE_TMDB_TOKEN}`,
+      Authorization: `Bearer ${my_key}`,
     },
   };
 
