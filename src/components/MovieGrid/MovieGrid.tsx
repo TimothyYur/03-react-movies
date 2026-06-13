@@ -1,6 +1,6 @@
 import { type KeyboardEvent } from 'react';
 import type { Movie } from '../../types/movie';
-import css from './MoovieGrid.module.css';
+import css from './MovieGrid.module.css';
 
 interface MovieGridProps {
   movies: Movie[];
