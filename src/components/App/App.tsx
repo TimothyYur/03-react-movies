@@ -26,7 +26,7 @@ export default function App() {
         toast.error('No movies found for your request.');
       }
       setMovies(fetchedMovies);
-    } catch (error) {
+    } catch{
       setHasError(true);
       toast.error('There was an error, please try again...');
     } finally {
